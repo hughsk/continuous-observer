@@ -6,6 +6,8 @@ var min = Math.min
 var max = Math.max
 var abs = Math.abs
 
+module.exports = observer
+
 function observer(field, range, linger) {
   range = (+range|0) || 1
   linger = max((+linger|0) - range, range)
