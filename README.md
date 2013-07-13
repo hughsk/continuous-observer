@@ -1,6 +1,6 @@
 # continuous-observer #
 
-Take a [continuous ndarray](http://github.com/ndarray-continuous) and, given a
+Take a [continuous ndarray](http://github.com/hughsk/ndarray-continuous) and, given a
 set of "observable" positions, automatically add and remove chunks as required.
 
 Use this for painless chunk management with one or more visible perspectives.
