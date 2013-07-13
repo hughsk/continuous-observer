@@ -1,0 +1,30 @@
+{
+  "name": "continuous-observer",
+  "version": "0.0.0",
+  "description": "Automatically add and remove chunks from continuous ndarrays as required.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hughsk/continuous-observer.git"
+  },
+  "keywords": [
+    "ndarray",
+    "continuous",
+    "infinite",
+    "player",
+    "browserify",
+    "viewer",
+    "manager"
+  ],
+  "author": "Hugh Kennedy <hughskennedy@gmail.com> (http://hughskennedy.com/)",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "cell-range": "0.0.0",
+    "dup": "0.0.0",
+    "map-async": "~0.1.1"
+  }
+}
