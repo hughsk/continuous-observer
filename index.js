@@ -41,8 +41,10 @@ function observer(field, range, linger) {
       var pos
       var i
 
-      for (var key in field.index) {
-        pos = field.index[key].position
+      var pages = field.index.pages
+      for (var p = 0; p < pages.length; p += 1)
+      for (var c = 0; c < pages[p].length; c += 1) {
+        pos = pages[p][c].position
 
         for (i = 0; i < l; i += 1) {
           distance = 0
