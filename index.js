@@ -16,8 +16,16 @@ function observer(field, range, linger) {
   var dims = shape.length
   var neighbours = cells(dup(dims, -range), dup(dims, range))
 
-  return function observe(places, callback) {
-    if (!Array.isArray(places[0])) places = [places]
+  var singletemp = []
+  function observeone(place, callback) {
+    singletemp[0] = place
+    return observe(singletemp, callback)
+  }
+
+  return observe
+
+  function observe(places, callback) {
+    if (!Array.isArray(places[0])) return observeone(places, callback)
     callback = callback || function(){}
 
     map(places, function(coord, next) {
