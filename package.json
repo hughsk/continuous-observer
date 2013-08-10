@@ -1,6 +1,6 @@
 {
   "name": "continuous-observer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Automatically add and remove chunks from continuous ndarrays as required.",
   "main": "index.js",
   "scripts": {
