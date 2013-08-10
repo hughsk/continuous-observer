@@ -45,6 +45,7 @@ function observer(field, range, linger) {
       for (var p = 0; p < pages.length; p += 1)
       for (var c = 0; c < pages[p].length; c += 1) {
         pos = pages[p][c].position
+        closest = Infinity
 
         for (i = 0; i < l; i += 1) {
           distance = 0
