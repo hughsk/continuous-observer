@@ -15,6 +15,7 @@ function observer(field, range, linger) {
   var shape = field.shape
   var dims = shape.length
   var neighbours = cells(dup(dims, -range), dup(dims, range))
+  var flagged = []
 
   var singletemp = []
   function observeone(place, callback) {
@@ -43,9 +44,9 @@ function observer(field, range, linger) {
       if (err) return next(err)
 
       var closest = Infinity
-      var flagged = []
       var distance = 0
       var l = places.length
+      var newdist
       var pos
       var i
 
@@ -58,7 +59,8 @@ function observer(field, range, linger) {
         for (i = 0; i < l; i += 1) {
           distance = 0
           for (var d = 0; d < dims; d += 1) {
-            distance += abs(pos[d] - places[i][d] / shape[d])
+            newdist = abs(pos[d] - places[i][d] / shape[d])
+            distance = newdist > distance ? newdist : distance
           }
 
           closest = distance < closest
@@ -71,6 +73,7 @@ function observer(field, range, linger) {
 
       i = flagged.length
       while (i--) field.remove(flagged[i])
+      flagged.length = 0
 
       return callback(null)
     })
